@@ -11,19 +11,25 @@
   {{ hugo.Generator }}
 
   {{ "<!-- Bootstrap -->" | safeHTML }}
+
   {{ $bootstrap := resources.Get "css/bootstrap.css" | minify }}
   <link rel="stylesheet" href="{{ $bootstrap.Permalink }}" />
+
   {{ "<!-- font-awesome -->" | safeHTML }}
+
   <link rel="stylesheet" href="{{ "font-awesome/css/font-awesome.min.css" | absURL }}" />
+
   {{ "<!-- Main Stylesheets -->" | safeHTML }}
+
   {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | minify }}
   <link href="{{ $style.Permalink }}" rel="stylesheet" />
+  <div test-data="{{ $style.Permalink }}"></div>
 
   {{ range .Site.Params.custom_stylesheets -}}
     {{ $style := resources.Get . | resources.ToCSS | minify }}
     <link href="{{ $style.Permalink }}" rel="stylesheet" />
-  {{- end }}
-
+  {{- end }}-->
+  
   <!--Favicon-->
   <link rel="shortcut icon" href="{{ .Site.Params.favicon_shortcut_icon | absURL }}" type="image/x-icon" />
   <link rel="icon" href="{{ .Site.Params.favicon_icon | absURL }}" type="image/x-icon" />
