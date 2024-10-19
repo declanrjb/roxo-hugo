@@ -28,7 +28,7 @@
   {{ range .Site.Params.custom_stylesheets -}}
     {{ $style := resources.Get . | resources.ToCSS | minify }}
     <link href="{{ $style.Permalink }}" rel="stylesheet" />
-  {{- end }}-->
+  {{- end }}
   
   <!--Favicon-->
   <link rel="shortcut icon" href="{{ .Site.Params.favicon_shortcut_icon | absURL }}" type="image/x-icon" />
