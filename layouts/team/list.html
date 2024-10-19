@@ -1,25 +1,37 @@
 {{ define "main" }}
 
+<section class="site-about-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="site-about-wrapper">
+            <div class="site-about-company">
+              <h1>
+                {{ .Params.heading }}
+              </h1>
+            </div>
+            <div class="site-about-description">
+              <p>
+                {{ .Description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-
-
-
-<section class="team-section" style="margin-top: 75px; margin-bottom: 75px;">
+<section class="team-section">
     <div class="container">
       <div class="row">
         {{ range (.Paginator 3).Pages }}
             
-            <div class="team-member" style="width: 100%; display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap; margin-bottom: 20px;">
-                <div class="col-4">
-                    {{ with .Params.image }}
-                        <img class="team-headshot" src="{{ . | absURL }}" alt="team-thumb" style="width: 100%;">
-                    {{ end }}
-                </div>
-                <div class="col-8">
-                    <h3>{{ .Params.title }}</h3>
-                    <p>{{ .Content }}</p>
+            <div class="team-member">
+                {{ with .Params.image }}
+                    <img class="team-headshot" src="{{ . | absURL }}" alt="team-thumb">
+                {{ end }}
+                <div class="text-content-wrapper team-member-bio">
+                    {{ .Content }}
                 </div>
             </div>
         {{ end }}
