@@ -4,9 +4,52 @@
 
 {{ partial "counter.html" . }}
 
-{{ partial "portfolio.html" . }}
+<section class="site-homepage-blurb">
+<div class="container">
+    <div class="row">
+        <div class="homepage-about-blurb">
+            {{.Content}}
+        </div>
+    </div>
+</div>
+</section>
 
-{{ partial "testimonial.html" . }}
+<section class="site-testimonial featured-document-section">
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2>
+                Explore the Documents
+            </h2>
+        </div>
+        <div class="col-6">
+            <iframe
+              src="https://next.www.documentcloud.org/documents/2622-agreement-between-conservatives-and-liberal-democrats-to-form-a-coalition-government/?embed=1&amp;responsive=1&amp;title=1"
+              title="Agreement between Conservatives and Liberal Democrats to form a Coalition Government (Hosted by DocumentCloud)"
+              width="700"
+              height="990"
+              style="
+                border: none;
+                width: 100%;
+                height: 800px;
+                height: calc(100vh - 100px);
+              "
+              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"
+            ></iframe>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="site-homepage-table-section">
+    <div class="container">
+        <div class="row">
+            <div class="homepage-about-blurb">
+                <div style="min-height:1366px" id="datawrapper-vis-Yh6mX"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/Yh6mX/embed.js" charset="utf-8" data-target="#datawrapper-vis-Yh6mX"></script><noscript><img src="https://datawrapper.dwcdn.net/Yh6mX/full.png" alt="This table shows each officer's name, their title and the number of incidents they were charged with. The table is sorted by the number of incidents in descending order and the corresponding column is heat mapped. The table also provides links to each officer's documents on DocumentCloud." /></noscript></div>
+            </div>
+        </div>
+    </div>
+    </section>
 
 {{ partial "call-to-action.html" . }}
 

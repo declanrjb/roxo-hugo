@@ -21,12 +21,20 @@
 
   {{ "<!-- Main Stylesheets -->" | safeHTML }}
 
+  {{ with .Site.Params.style }}
+    <style data-test="{{.primary_color}}"></style>
+    <style>
+      :root {
+        --primary-color: black;
+      }
+    </style>
+  {{ end }}
+
   {{ $style := resources.Get "scss/style.scss" | resources.ToCSS | minify }}
   <link href="{{ $style.Permalink }}" rel="stylesheet" />
-  <div test-data="{{ $style.Permalink }}"></div>
 
   {{ range .Site.Params.custom_stylesheets -}}
-    {{ $style := resources.Get . | resources.ToCSS | minify }}
+    {{ $style := resources.Get . | resources.ExecuteAsTemplate "custom.css" . | toCSS | minify | fingerprint }}
     <link href="{{ $style.Permalink }}" rel="stylesheet" />
   {{- end }}
   
@@ -34,4 +42,6 @@
   <link rel="shortcut icon" href="{{ .Site.Params.favicon_shortcut_icon | absURL }}" type="image/x-icon" />
   <link rel="icon" href="{{ .Site.Params.favicon_icon | absURL }}" type="image/x-icon" />
   <script src="https://kit.fontawesome.com/bb1d08a9b2.js" crossorigin="anonymous"></script>
+
+
 </head>
