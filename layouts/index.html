@@ -25,10 +25,11 @@
 </div>
 </section>
 
-<section class="site-testimonial featured-document-section">
+<section class="site-testimonial featured-document-section homepage-section">
 <div class="container" id="featured-document-container">
     <div class="row">
         <div class="col-5">
+            <p class="section-tag">Featured Document</p>
             <h2 class="featured-document-headline">{{.Params.featuredTitle}}</h2>
             <p class="body-text">{{ .Params.featuredDescription}}</p>
         </div>
@@ -51,16 +52,24 @@
 </div>
 </section>
 
-<section class="site-homepage-table-section">
+<section class="site-homepage-table-section homepage-section">
     <div class="container">
         <div class="row">
-            <div class="homepage-about-blurb">
+            <div class="col-7">
                 <div style="min-height:1366px" id="datawrapper-vis-Yh6mX"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/Yh6mX/embed.js" charset="utf-8" data-target="#datawrapper-vis-Yh6mX"></script><noscript><img src="https://datawrapper.dwcdn.net/Yh6mX/full.png" alt="This table shows each officer's name, their title and the number of incidents they were charged with. The table is sorted by the number of incidents in descending order and the corresponding column is heat mapped. The table also provides links to each officer's documents on DocumentCloud." /></noscript></div>
+            </div>
+            <div class="col-5">
+                <p class="section-tag">Explore the Data</p>
+                <h2 class="featured-document-headline">Lorum ipsum dolor sit amet</h2>
+                <p class="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non odio cursus, placerat dolor eget, dictum arcu. Etiam eget tellus id nulla feugiat efficitur in eu orci. Quisque et diam interdum, sollicitudin nisi ut, tempus neque. Quisque hendrerit tortor non sem ullamcorper congue. Fusce quis sodales orci. Proin at ex eget purus fermentum posuere in et ante. Maecenas fringilla est in quam rutrum, quis elementum tellus posuere. Curabitur in ligula ex. Sed hendrerit mi quis felis convallis porta. Nam nisi mauris, facilisis vel viverra sit amet, ultricies et ante. Morbi varius risus a turpis eleifend euismod. Mauris mattis fermentum lacus. </p>
+                <h5>Subscribe for updates on new documents</h5>
+                <div class="subscribe-wrapper">
+                    <input type="email" placeholder="Subscribe..." class="email-subscribe subscribe-homepage">
+                    <div class="subscribe-trigger"><i class="fa-solid fa-envelope"></i></div>
+                </div>
             </div>
         </div>
     </div>
     </section>
-
-{{ partial "call-to-action.html" . }}
 
 {{ end }}
