@@ -43,5 +43,18 @@
   <link rel="icon" href="{{ .Site.Params.favicon_icon | absURL }}" type="image/x-icon" />
   <script src="https://kit.fontawesome.com/bb1d08a9b2.js" crossorigin="anonymous"></script>
 
+  {{ with .Site.Params }}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{.gAnalyticsID}}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{{.gAnalyticsID}}');
+    </script>
+  {{ end }}
+
+
 
 </head>

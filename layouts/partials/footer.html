@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       {{ with .Site.Params.footer.contactInfo }}
-      <div class="col-lg-3 col-md-6">
+      <!--<div class="col-lg-3 col-md-6">
         <div class="site-footer-widget">
           <h5 class="site-footer-widget-title">{{ .title }}</h5>
           <p class="site-footer-widget-description">
@@ -19,10 +19,10 @@
 	    {{ end }}
           </p>
         </div>
-      </div>
+      </div>-->
       {{ end }}
       {{ with .Site.Params.footer.sitemap }}
-      <div class="col-lg-2 col-md-6">
+      <!--<div class="col-lg-2 col-md-6">
         <div class="site-footer-widget">
           <h5 class="site-footer-widget-title">{{ .title }}</h5>
           <ul class="site-footer-widget-links">
@@ -31,10 +31,10 @@
             {{ end }}
           </ul>
         </div>
-      </div>
+      </div>-->
       {{ end }}
       {{ with .Site.Data.socials }}
-      <div class="col-lg-2 col-md-6">
+      <!--<div class="col-lg-2 col-md-6">
         <div class="site-footer-widget">
           <h5 class="site-footer-widget-title">Social Media</h5>
           <ul class="site-footer-widget-links">
@@ -43,7 +43,7 @@
             {{ end }}
           </ul>
         </div>
-      </div>
+      </div>-->
       {{ end }}
       {{ with .Site.Params.footer.service }}
       <div class="col-lg-3 col-md-6">
@@ -57,7 +57,6 @@
       {{ end }}
       <div class="col-lg-2 col-12">
         <a href="#top" class="site-footer-widget-top">
-          <!--<img src="{{ "images/to-top.svg" | absURL }}" alt="back-to-top">-->
           <p>
 	    {{ .Site.Params.footer.back_to_top.description | safeHTML }}
           </p>
