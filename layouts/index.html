@@ -2,7 +2,18 @@
 
 {{ partial "hero.html" . }}
 
-{{ partial "counter.html" . }}
+
+<section class="site-counter" id="counter">
+<div class="container">
+    <div class="row">
+    <div class="col-12">
+        <div class="section-title">
+        <h2 class="text-white counter-header">{{ .Params.description }}</h2>
+        </div>
+    </div>
+    </div>
+</div>
+</section>
 
 <section class="site-homepage-blurb">
 <div class="container">
@@ -15,24 +26,25 @@
 </section>
 
 <section class="site-testimonial featured-document-section">
-<div class="container">
+<div class="container" id="featured-document-container">
     <div class="row">
-        <div class="col-6">
-            <h2>
-                Explore the Documents
+        <div class="col-5">
+            <h2 class="featured-document-headline">
+                Featured Document
             </h2>
+            <p class="body-text">{{ .Params.featuredDescription}}</p>
         </div>
-        <div class="col-6">
+        <div class="col-7">
             <iframe
-              src="https://next.www.documentcloud.org/documents/2622-agreement-between-conservatives-and-liberal-democrats-to-form-a-coalition-government/?embed=1&amp;responsive=1&amp;title=1"
-              title="Agreement between Conservatives and Liberal Democrats to form a Coalition Government (Hosted by DocumentCloud)"
+              src="{{ .Params.featuredLink}}"
+              title="{{ .Params.featuredTitle}}"
               width="700"
               height="990"
               style="
                 border: none;
                 width: 100%;
                 height: 800px;
-                height: calc(100vh - 100px);
+                height: calc(120vh - 100px);
               "
               sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"
             ></iframe>
