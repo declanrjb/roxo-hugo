@@ -6,7 +6,7 @@
   <section class="site-hero" style="background-image: url('{{ .background_image }}');">
     <div class="container">
       <div class="row">
-        <div class="col-lg-10 mx-auto">
+        <div class="col col-lg-10 mx-auto">
           <div class="site-hero-content text-center">
             <div class="site-hero-header">
               <h6><a class="site-tagline">{{ .tagline }}</a></h6>
@@ -50,7 +50,7 @@
 <section class="site-counter" id="counter">
 <div class="container">
     <div class="row">
-    <div class="col-12">
+    <div class="col col-12">
         <div class="section-title">
         <h2 class="text-white counter-header">{{ .Params.description }}</h2>
         </div>
@@ -72,12 +72,12 @@
 <section class="site-testimonial featured-document-section homepage-section">
 <div class="container" id="featured-document-container">
     <div class="row">
-        <div class="col-5">
+        <div class="col col-5">
             <p class="section-tag">Featured Document</p>
             <h2 class="featured-document-headline">{{.Params.featuredTitle}}</h2>
             <p class="body-text">{{ .Params.featuredDescription}}</p>
         </div>
-        <div class="col-7">
+        <div class="col col-7">
             <iframe
               src="{{ .Params.featuredLink}}"
               title="{{ .Params.featuredTitle}}"
@@ -99,10 +99,10 @@
 <section class="site-homepage-table-section homepage-section">
     <div class="container">
         <div class="row">
-            <div class="col-7">
+            <div class="col col-7" id="table-desktop">
                 <div style="min-height:1366px" id="datawrapper-vis-Yh6mX"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/Yh6mX/embed.js" charset="utf-8" data-target="#datawrapper-vis-Yh6mX"></script><noscript><img src="https://datawrapper.dwcdn.net/Yh6mX/full.png" alt="This table shows each officer's name, their title and the number of incidents they were charged with. The table is sorted by the number of incidents in descending order and the corresponding column is heat mapped. The table also provides links to each officer's documents on DocumentCloud." /></noscript></div>
             </div>
-            <div class="col-5">
+            <div class="col col-5">
                 <p class="section-tag">Explore the Data</p>
                 <h2 class="featured-document-headline">{{ .Params.exploreTitle }}</h2>
                 <p class="body-text">{{.Params.exploreDescription}}</p>
@@ -112,6 +112,9 @@
                     <div class="subscribe-trigger"><i class="fa-solid fa-envelope"></i></div>
                 </div>
             </div>
+            <div class="col col-7" id="table-mobile">
+              <div style="min-height:1366px" id="datawrapper-vis-Yh6mX"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/Yh6mX/embed.js" charset="utf-8" data-target="#datawrapper-vis-Yh6mX"></script><noscript><img src="https://datawrapper.dwcdn.net/Yh6mX/full.png" alt="This table shows each officer's name, their title and the number of incidents they were charged with. The table is sorted by the number of incidents in descending order and the corresponding column is heat mapped. The table also provides links to each officer's documents on DocumentCloud." /></noscript></div>
+          </div>
         </div>
     </div>
     </section>
