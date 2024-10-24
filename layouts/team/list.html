@@ -32,6 +32,9 @@
       <div class="row">
         {{ range (.Paginator 9999999).Pages }}
             <div class="team-member">
+                {{ if .Params.photoTag }}
+                  <p class="team-member-photo-tag">{{.Params.photoTag}}</p>
+                {{ end }}
                 {{ with .Params.image }}
                     <img class="team-headshot" src="{{ . | absURL }}" alt="team-thumb">
                 {{ end }}
@@ -42,5 +45,26 @@
         {{ end }}
       </div>
     </div>
+</section>
+
+<section class="team-section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <h3 class="sponsor-title">With generous support from our sponsors</h3>
+      </div>
+      <div class="col col-12">
+        {{ with .Site.Data.sponsors }}
+        {{ if .enable }}
+            {{ range .sponsors }}
+              <a href="{{.link}}"><div class="sponsor">
+                <img class="sponsor-img" src="{{ .image | absURL}}">
+              </div></a>
+            {{ end }}
+        {{ end }}
+      {{ end }}
+      </div>
+    </div>
+  </div>
 </section>
 {{ end }}
