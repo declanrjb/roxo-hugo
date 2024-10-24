@@ -2,8 +2,8 @@
 
 <section class="site-about-header">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
+    <div class="row header-row">
+      <div class="col col-12 header-col">
         <div class="site-about-wrapper">
           <div class="site-about-company">
             <h1>
@@ -33,7 +33,7 @@
   <div class="container">
     <div class="row">
       {{ range (.Paginator 4).Pages }}
-      <div class="col-lg-6 col-md-10 mx-auto">
+      <div class="col-lg-6 col-md-10 mx-auto col">
         <a href="{{.Params.link}}">
           <div class="site-project-item">
             <div class="site-project-item-thumb">
