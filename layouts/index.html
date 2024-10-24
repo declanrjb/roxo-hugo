@@ -62,7 +62,7 @@
 <section class="site-homepage-blurb">
 <div class="container">
     <div class="row">
-        <div class="homepage-about-blurb">
+        <div class="homepage-about-blurb text-content-wrapper">
             {{.Content}}
         </div>
     </div>
@@ -71,52 +71,43 @@
 
 <section class="site-testimonial featured-document-section homepage-section">
 <div class="container" id="featured-document-container">
-    <div class="row">
-        <div class="col col-5">
-            <p class="section-tag">Featured Document</p>
-            <h2 class="featured-document-headline">{{.Params.featuredTitle}}</h2>
-            <p class="body-text">{{ .Params.featuredDescription}}</p>
-        </div>
-        <div class="col col-7">
-            <iframe
-              src="{{ .Params.featuredLink}}"
-              title="{{ .Params.featuredTitle}}"
-              width="700"
-              height="990"
-              style="
-                border: none;
-                width: 100%;
-                height: 800px;
-                height: calc(120vh - 100px);
-              "
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"
-            ></iframe>
-        </div>
-    </div>
+    {{ with .Site.Data.homepageAnnotations }}
+      {{ if .enable }}
+          {{ range .annotations }}
+            <div class="row stagger-row">
+              <div class="col col-6 doccloud-embed-col">
+                <div class="embed doccloud-embed">
+                  <div
+                    id="DC-note-{{.annotID}}"
+                    class="DC-embed DC-embed-note DC-note-container"
+                  ></div>
+                  <script src="https://www.documentcloud.org/notes/loader.js"></script>
+                  <script>
+                    dc.embed.loadNote(
+                      "https://next.www.documentcloud.org/documents/{{.documentID}}/annotations/{{.annotID}}.js"
+                    );
+                  </script>
+                  <noscript>
+                    <a
+                      href="https://next.www.documentcloud.org/documents/{{.documentID}}/annotations/{{.annotID}}"
+                      >View note</a
+                    >
+                  </noscript>
+                </div>
+              </div>
+              <div class="col col-6 text-content-wrapper">
+                <h2 class="featured-document-headline">{{.heading}}</h2>
+                <p class="body-text annotation-description">
+                  {{.text}}
+                </p>
+            </div>
+          </div>
+          {{ end }}
+        {{ end }}
+    {{ end }}
 </div>
 </section>
 
-<section class="site-homepage-table-section homepage-section">
-    <div class="container">
-        <div class="row">
-            <div class="col col-7" id="table-desktop">
-                <div style="min-height:1366px" id="datawrapper-vis-Yh6mX"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/Yh6mX/embed.js" charset="utf-8" data-target="#datawrapper-vis-Yh6mX"></script><noscript><img src="https://datawrapper.dwcdn.net/Yh6mX/full.png" alt="This table shows each officer's name, their title and the number of incidents they were charged with. The table is sorted by the number of incidents in descending order and the corresponding column is heat mapped. The table also provides links to each officer's documents on DocumentCloud." /></noscript></div>
-            </div>
-            <div class="col col-5">
-                <p class="section-tag">Explore the Data</p>
-                <h2 class="featured-document-headline">{{ .Params.exploreTitle }}</h2>
-                <p class="body-text">{{.Params.exploreDescription}}</p>
-                <h5>Subscribe for updates on new documents</h5>
-                <div class="subscribe-wrapper">
-                    <input type="email" placeholder="Subscribe..." class="email-subscribe subscribe-homepage">
-                    <div class="subscribe-trigger"><i class="fa-solid fa-envelope"></i></div>
-                </div>
-            </div>
-            <div class="col col-7" id="table-mobile">
-              <div style="min-height:1366px" id="datawrapper-vis-Yh6mX"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/Yh6mX/embed.js" charset="utf-8" data-target="#datawrapper-vis-Yh6mX"></script><noscript><img src="https://datawrapper.dwcdn.net/Yh6mX/full.png" alt="This table shows each officer's name, their title and the number of incidents they were charged with. The table is sorted by the number of incidents in descending order and the corresponding column is heat mapped. The table also provides links to each officer's documents on DocumentCloud." /></noscript></div>
-          </div>
-        </div>
-    </div>
-    </section>
+
 
 {{ end }}

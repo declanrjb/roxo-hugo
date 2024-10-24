@@ -46,25 +46,4 @@
       </div>
     </div>
 </section>
-
-<section class="team-section">
-  <div class="container">
-    <div class="row">
-      <div class="col col-12">
-        <h3 class="sponsor-title">With generous support from our sponsors</h3>
-      </div>
-      <div class="col col-12">
-        {{ with .Site.Data.sponsors }}
-        {{ if .enable }}
-            {{ range .sponsors }}
-              <a href="{{.link}}"><div class="sponsor">
-                <img class="sponsor-img" src="{{ .image | absURL}}">
-              </div></a>
-            {{ end }}
-          {{ end }}
-        {{ end }}
-      </div>
-    </div>
-  </div>
-</section>
 {{ end }}
