@@ -73,6 +73,7 @@
 <div class="container" id="featured-document-container">
     {{ with .Site.Data.homepageAnnotations }}
       {{ if .enable }}
+          <h3 class="featured-document-headline">{{ .title }}</h3>
           {{ range .annotations }}
             <div class="row stagger-row">
               <div class="col col-6 doccloud-embed-col">
@@ -96,7 +97,7 @@
                 </div>
               </div>
               <div class="col col-6 text-content-wrapper">
-                <h2 class="featured-document-headline">{{.heading}}</h2>
+                <h2 class="annotation-headline">{{.heading}}</h2>
                 <p class="body-text annotation-description">
                   {{.text}}
                 </p>
