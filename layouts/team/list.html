@@ -35,9 +35,7 @@
                 {{ if .Params.photoTag }}
                   <p class="team-member-photo-tag">{{.Params.photoTag}}</p>
                 {{ end }}
-                {{ with .Params.image }}
-                    <img class="team-headshot" src="{{ . | absURL }}" alt="team-thumb">
-                {{ end }}
+                <img class="team-headshot" src="{{ .Params.image | absURL }}" alt="A square, black and white photo of project team member {{.Params.Title}}">
                 <div class="text-content-wrapper team-member-bio">
                     {{ .Content }}
                 </div>

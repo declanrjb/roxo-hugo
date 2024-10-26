@@ -5,12 +5,12 @@
     <div class="row header-row">
       <div class="col col-12 header-col">
         <div class="site-about-wrapper">
-          <div class="site-about-company">
+          <div class="site-about-company" alt="The page headline reads {{ .Params.heading }}">
             <h1>
               {{ .Params.heading }}
             </h1>
           </div>
-          <div class="site-about-description">
+          <div class="site-about-description" alt="The page description is placed to the right of the page headline. It reads {{ .Description}}">
             <p>
               {{ .Description }}
             </p>
@@ -25,7 +25,7 @@
   <div class="container">
     <div class="row">
       <div class="col col-12">
-        <div class="text-content-wrapper">
+        <div class="text-content-wrapper" alt="The body of the page consists of several full-width sections of paragraph text, separated by subheadings.">
           {{.Content}}
         </div>
       </div>

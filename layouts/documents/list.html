@@ -12,7 +12,7 @@
   <div class="container">
     <div class="row stagger-row">
       <div class="col col-4">
-          <div class="document-page-header">
+          <div class="document-page-header" alt="The document section header consists of white text inside a dark blue box. It reads {{.Params.heading}}">
             <h1>
               {{ .Params.heading }}
             </h1>
@@ -22,10 +22,10 @@
           </div>
       </div>
       <div class="col col-8">
-        <div class="embed">
+        <div class="embed" alt="The document section contains an embedded Document Cloud project. A series of PDF files are listed on a grey background. Each file is titled with the name of a New York State Police officer.">
           <iframe
             src="https://next.www.documentcloud.org/projects/{{ .Params.docCloudProject }}/?embed=1"
-            title="New York State Disciplinary Files (Hosted by DocumentCloud)"
+            title="{{.Params.docCloudProjectTitle}}"
             width="100%"
             height="600"
             style="border: 1px solid #aaa"
@@ -36,12 +36,12 @@
     </div>
     <div class="row stagger-row">
       <div class="col col-4">
-        <div class="document-page-header">
+        <div class="document-page-header" alt="The table section header consists of white text inside a dark blue box. It reads {{.Params.tableTitle}}">
           <h1>
             {{ .Params.tableTitle }}
           </h1>
         </div>
-        <div class="text-content-wrapper">
+        <div class="text-content-wrapper" alt="The table section contains a three column table displaying the name of an NY State Police officer, that officer's title, and a link to that officer's disciplinary files on Document Cloud. The table can be searched by officer.">
           <p>{{ .Params.tableDescription }}</p>
         </div>
       </div>

@@ -9,7 +9,7 @@
             <h1>
               {{ .Params.title }}
             </h1>
-            <div id="custom-substack-embed" class="substack-embed-header"></div>
+            <div id="custom-substack-embed" class="substack-embed-header" alt="An embedded form. Takes an email address as input and subscribes that address to the project's Substack newsletter when the user presses enter."></div>
           </div>
           <div class="site-about-description">
             <p class="description">
@@ -25,12 +25,12 @@
   </div>
 </section>
 
-<section class="site-project" id="project">
+<section class="site-project" id="project" alt="A grid of reported stories produced by the Behind the Badge project. Two stories are included per row, with an image, title, and brief description text for each story.">
   <div class="container">
     <div class="row">
-      {{ range (.Paginator 4).Pages }}
+      {{ range (.Paginator 999999).Pages }}
       <div class="col-lg-6 col-md-10 mx-auto col">
-        <a href="{{.Params.link}}">
+        <a href="{{.Params.link}}" alt="Click to view the story titled {{.Params.headline}}">
           <div class="site-project-item">
             <div class="site-project-item-thumb">
               {{ with .Params.image }}
@@ -54,7 +54,7 @@
   </div>
 </section>
 
-<section class="sponsors-section">
+<section class="sponsors-section" alt="A grid of the project's financial sponsors.">
   <div class="container">
     <div class="row">
       <div class="col col-12">
@@ -64,7 +64,7 @@
         {{ with .Site.Data.sponsors }}
         {{ if .enable }}
             {{ range .sponsors }}
-              <a href="{{.link}}"><div class="sponsor">
+              <a href="{{.link}}" alt="A project sponsor called {{.name}}. Click to learn more about this sponsor."><div class="sponsor">
                 <img class="sponsor-img" src="{{ .image | absURL}}">
               </div></a>
             {{ end }}
