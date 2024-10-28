@@ -5,7 +5,7 @@
   {{ "<!-- Site Hero Start -->" | safeHTML }}
   <section class="site-hero"> 
     <div class="container">
-      <video id="hero-video" autoplay loop muted alt="A black and white looping montage of clips from NY State Police body camera footage. The footage shows officers performing their duties and interacting with civilians. Black squares and rectangles routinely appear and cover parts of the footage to obscure certain details.">
+      <video id="hero-video" autoplay="true" loop="true" muted="true" playsinline="true" alt="A black and white looping montage of clips from NY State Police body camera footage. The footage shows officers performing their duties and interacting with civilians. Black squares and rectangles routinely appear and cover parts of the footage to obscure certain details.">
         <source src="{{.backgroundGraphic | absURL}}" type="video/mp4" />
         Your browser does not support the video tag.
       </video>   
