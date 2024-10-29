@@ -2,57 +2,56 @@
 
 <section class="site-about-header">
   <div class="container">
-    <div class="row">
-      
+    <div class="row header-row">
+      <div class="col-12 header-col">
+        <div class="site-about-wrapper">
+          <div class="site-about-company">
+            <h1>
+              {{ .Params.heading }}
+            </h1>
+          </div>
+          <div class="site-about-description">
+            <p>
+              {{ .Description }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="site-about-body">
   <div class="container">
-    <div class="row stagger-row">
-      <div class="col col-4">
-          <div class="document-page-header" id="document-page-header-top" alt="The document section header consists of white text inside a dark blue box. It reads {{.Params.heading}}">
-            <h1>
-              {{ .Params.heading }}
-            </h1>
-          </div>
-          <div class="text-content-wrapper">
-            {{.Content}}
-          </div>
+    <div class="row stagger-row overflow-row">
+      <div class="col col-7">
+        <div style="min-height:1036px" id="datawrapper-vis-DwwLT">
+          <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/DwwLT/embed.js" charset="utf-8" data-target="#datawrapper-vis-DwwLT"></script>
+          <noscript>
+            <img src="https://datawrapper.dwcdn.net/DwwLT/full.png" alt="This black and white table shows each officer's name and the number of incidents they were charged with. The table is sorted by the number of incidents with white, pink, red or dark red shades of color on the number of incidents with dark red for higher numbers." />
+          </noscript>
+        </div>
       </div>
-      <div class="col col-8">
-        <div class="embed" alt="The document section contains an embedded Document Cloud project. A series of PDF files are listed on a grey background. Each file is titled with the name of a New York State Police officer.">
+      <div class="col col-5" id="dc-embed-col">
+        <div class="document-page-header" id="dc-embed-header" alt="The table section header consists of white text inside a dark blue box. It reads {{.Params.tableTitle}}">
+          <h1>
+            {{ .Params.docCloudHeading }}
+          </h1>
+        </div>
+        <div class="embed" id="dc-embed" alt="The document section contains an embedded Document Cloud project. A series of PDF files are listed on a grey background. Each file is titled with the name of a New York State Police officer.">
           <iframe
             src="https://next.www.documentcloud.org/projects/{{ .Params.docCloudProject }}/?embed=1"
             title="{{.Params.docCloudProjectTitle}}"
             width="100%"
-            height="600"
+            height="750px"
             style="border: 1px solid #aaa"
             sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"
           ></iframe>
         </div>
       </div>
     </div>
-    <div class="row stagger-row">
-      <div class="col col-4">
-        <div class="document-page-header" alt="The table section header consists of white text inside a dark blue box. It reads {{.Params.tableTitle}}">
-          <h1>
-            {{ .Params.tableTitle }}
-          </h1>
-        </div>
-        <div class="text-content-wrapper" alt="The table section contains a three column table displaying the name of an NY State Police officer, that officer's title, and a link to that officer's disciplinary files on Document Cloud. The table can be searched by officer.">
-          <p>{{ .Params.tableDescription }}</p>
-        </div>
-      </div>
-      <div class="col col-8">
-        <div style="min-height:800px" id="datawrapper-vis-Yh6mX">
-          <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/Yh6mX/embed.js" charset="utf-8" data-target="#datawrapper-vis-Yh6mX"></script>
-          <noscript>
-            <img src="https://datawrapper.dwcdn.net/Yh6mX/full.png" alt="This table shows each officer's name, their title and the number of incidents they were charged with. The table is sorted by the number of incidents in descending order and the corresponding column is heat mapped. The table also provides links to each officer's documents on DocumentCloud." />
-          </noscript>
-        </div>
-      </div>
+    <div class="row stagger-row" style="border: 2px solid black;">
+      <h3>[possible featured documents?]</h3>
     </div>
   </div>
 </section>

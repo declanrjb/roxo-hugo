@@ -31,7 +31,7 @@
     <link href="{{ $style.Permalink }}" rel="stylesheet" />
   {{- end }}
 
-  <!--<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>-->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
   {{ with .Site.Params.substackDomain}}
   <script>
@@ -43,7 +43,7 @@
     };
   </script>
   {{ end }}
-  
+
   <!--Favicon-->
   <link rel="shortcut icon" href="{{ .Site.Params.favicon_shortcut_icon | absURL }}" type="image/x-icon" />
   <link rel="icon" href="{{ .Site.Params.favicon_icon | absURL }}" type="image/x-icon" />
