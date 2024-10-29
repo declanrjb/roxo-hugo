@@ -50,9 +50,31 @@
         </div>
       </div>
     </div>
-    <div class="row stagger-row" style="border: 2px solid black;">
-      <h3>[possible featured documents?]</h3>
-    </div>
+
+      {{ with .Site.Data.featuredDocuments }}
+        {{ if .enable }}
+            <div class="document-page-header" alt="The table section header consists of white text inside a dark blue box. It reads {{.Params.tableTitle}}">
+              <h1>
+                {{ .title }}
+              </h1>
+            </div>
+            <div class="row stagger-row">
+            {{ range .documents }}
+              <a class="featured-document-wrapper" href="" alt="">
+                <div class="featured-document">
+                  <column style="width: 30%;">
+                    <img class="featured-document-thumbnail" src="https://s3.documentcloud.org/documents/{{.idNumber}}/pages/{{.identifier}}-p1-thumbnail.gif">
+                  </column>
+                  <column style="width: 70%; padding-left: 20px;">
+                    <h4>{{.title}}</h4>
+                    <p>{{.blurb}}</p>
+                  </column>
+                </div>
+              </a>
+            {{ end }}
+          </div>
+          {{ end }}
+        {{ end }}
   </div>
 </section>
 
