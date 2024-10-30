@@ -4,11 +4,13 @@
   {{ if .enable }}
   {{ "<!-- Site Hero Start -->" | safeHTML }}
   <section class="site-hero"> 
-    <div class="container">
-      <video id="hero-video" autoplay="true" loop="true" muted="true" playsinline="true" alt="A black and white looping montage of clips from NY State Police body camera footage. The footage shows officers performing their duties and interacting with civilians. Black squares and rectangles routinely appear and cover parts of the footage to obscure certain details.">
-        <source src="{{.backgroundGraphic | absURL}}" type="video/mp4" />
+    <div class="container video-background">
+      <iframe name="yt-embed" id="hero-video" src="https://www.youtube.com/embed/YGfUAJZwN0s?si=J8nVixm0fDKH-bzf&autoplay=1&mute=1&controls=0&loop=1&&playlist=YGfUAJZwN0s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen alt="A black and white looping montage of clips from NY State Police body camera footage. The footage shows officers performing their duties and interacting with civilians. Black squares and rectangles routinely appear and cover parts of the footage to obscure certain details."></iframe>
+      <!--<video id="hero-video" autoplay="true" loop="true" muted="true" playsinline="true" alt="A black and white looping montage of clips from NY State Police body camera footage. The footage shows officers performing their duties and interacting with civilians. Black squares and rectangles routinely appear and cover parts of the footage to obscure certain details.">
+        
+        <source src="https://www.youtube.com/embed/YGfUAJZwN0s?si=J8nVixm0fDKH-bzf" type="video/mp4" />
         Your browser does not support the video tag.
-      </video>   
+      </video>-->
       <div class="row">
         <div class="col col-lg-10 mx-auto">
           <div class="site-hero-content text-center">
