@@ -8,7 +8,7 @@
       </div>
     </div>
   </div>
-</section>
+</section>a
 
 <section class="site-about-body">
   <div class="container">
@@ -37,7 +37,7 @@
       {{ end }}
     {{ end }}
     <div class="row stagger-row overflow-row">
-      <div class="col col-7">
+      <div class="col col-6">
         <div style="min-height:1036px" id="datawrapper-vis-DwwLT">
           <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/DwwLT/embed.js" charset="utf-8" data-target="#datawrapper-vis-DwwLT"></script>
           <noscript>
@@ -45,22 +45,19 @@
           </noscript>
         </div>
       </div>
-      <div class="col col-5" id="dc-embed-col">
-        <div class="document-page-header" id="dc-embed-header" alt="The table section header consists of white text inside a dark blue box. It reads {{.Params.tableTitle}}">
-          <h1>
-            {{ .Params.docCloudHeading }}
-          </h1>
-        </div>
-        <div class="embed" id="dc-embed" alt="The document section contains an embedded Document Cloud project. A series of PDF files are listed on a grey background. Each file is titled with the name of a New York State Police officer.">
-          <iframe
-            src="https://next.www.documentcloud.org/projects/{{ .Params.docCloudProject }}/?embed=1"
-            title="{{.Params.docCloudProjectTitle}}"
-            width="100%"
-            height="750px"
-            style="border: 1px solid #aaa"
-            sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"
-          ></iframe>
-        </div>
+      <div class="col col-6" id="dc-embed-col">
+        {{ range (.Paginator 999999).Pages }}
+          <div class="embed" id="dc-embed" alt="The document section contains an embedded Document Cloud project. A series of PDF files are listed on a grey background. Each file is titled with the name of a New York State Police officer.">
+            <iframe
+              src="{{.Params.project}}"
+              title="{{.Params.title}}"
+              width="100%"
+              height="750px"
+              style="border: 1px solid #aaa"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"
+            ></iframe>
+          </div>
+        {{ end }}
       </div>
     </div>
   </div>
