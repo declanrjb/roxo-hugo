@@ -38,20 +38,20 @@
     {{ end }}
     <div class="row stagger-row overflow-row">
       {{ range (.Paginator 999999).Pages }}
-      <div class="col col-6" id="dc-embed-col">
-        
-          <div class="embed" id="dc-embed" alt="The document section contains an embedded Document Cloud project. A series of PDF files are listed on a grey background. Each file is titled with the name of a New York State Police officer.">
-            <iframe
-              src="{{.Params.project}}"
-              title="{{.Params.title}}"
-              width="100%"
-              height="750px"
-              style="border: 1px solid #aaa"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"
-            ></iframe>
-          </div>
-        
-      </div>
+        <div class="col col-6 dc-embed-col">
+          <h2 class="docs-embed-title">{{.Params.title}}</h2>
+          <p class="docs-embed-description">{{.Params.description}}</p>
+            <div class="embed" id="dc-embed" alt="The document section contains an embedded Document Cloud project. A series of PDF files are listed on a grey background. Each file is titled with the name of a New York State Police officer.">
+              <iframe
+                src="{{.Params.project}}"
+                title="{{.Params.title}}"
+                width="100%"
+                height="750px"
+                style="border: 1px solid #aaa"
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"
+              ></iframe>
+            </div>
+        </div>
       {{ end }}
     </div>
   </div>
