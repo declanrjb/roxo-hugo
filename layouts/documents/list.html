@@ -37,16 +37,9 @@
       {{ end }}
     {{ end }}
     <div class="row stagger-row overflow-row">
-      <div class="col col-6">
-        <div style="min-height:1036px" id="datawrapper-vis-DwwLT">
-          <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/DwwLT/embed.js" charset="utf-8" data-target="#datawrapper-vis-DwwLT"></script>
-          <noscript>
-            <img src="https://datawrapper.dwcdn.net/DwwLT/full.png" alt="This black and white table shows each officer's name and the number of incidents they were charged with. The table is sorted by the number of incidents with white, pink, red or dark red shades of color on the number of incidents with dark red for higher numbers." />
-          </noscript>
-        </div>
-      </div>
+      {{ range (.Paginator 999999).Pages }}
       <div class="col col-6" id="dc-embed-col">
-        {{ range (.Paginator 999999).Pages }}
+        
           <div class="embed" id="dc-embed" alt="The document section contains an embedded Document Cloud project. A series of PDF files are listed on a grey background. Each file is titled with the name of a New York State Police officer.">
             <iframe
               src="{{.Params.project}}"
@@ -57,8 +50,9 @@
               sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox"
             ></iframe>
           </div>
-        {{ end }}
+        
       </div>
+      {{ end }}
     </div>
   </div>
 </section>
