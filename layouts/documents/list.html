@@ -38,6 +38,10 @@
     {{ end }}
     <div class="row stagger-row overflow-row">
       <input type="search" id="file-search"/>
+      <div class="search-results">
+    </div>
+    <div class="row stagger-row overflow-row">
+      </div>
       {{ range (.Paginator 999999).Pages }}
         <div class="col col-6 dc-embed-col">
             <div class="embed" id="dc-embed" alt="The document section contains an embedded Document Cloud project. A series of PDF files are listed on a grey background. Each file is titled with the name of a New York State Police officer.">
