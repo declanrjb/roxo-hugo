@@ -76,6 +76,10 @@
 
           $.get(request, function( data ) {
             $( ".search-results" ).html( data );
+
+            $.each(data, function(key, value) {
+              console.log(value)
+            })
           });
         }
 
