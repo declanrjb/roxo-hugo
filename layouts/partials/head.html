@@ -68,7 +68,7 @@
             console.log(data)
           });
 
-        function updateTable() {
+        function updateTable(show=8,all=false) {
 
           var docTemplate = "<a class='featured-document-wrapper' href='LINK' alt=''>\
             <div class='featured-document'>\
@@ -86,11 +86,16 @@
           var query = $('#file-search').val()
 
           var request = "https://btb-api.onrender.com/search?q=" + query + "&format=json"
+
+          if (!all) {
+            request += '&show=' + show
+          }
           console.log('sending request: ' + request)
 
           $.get(request, function( data ) {
             $('.default-featured-documents').css('display', 'none')
-
+            $('.search-results').css('display', 'flex')
+            $('.search-results').html('')
             $.each(data, function(key, value) {
               var newDoc = docTemplate
               var thumbnail = value.Thumbnail.replace('thumbnail', 'large')
@@ -101,7 +106,15 @@
 
               $( ".search-results" ).append( newDoc )              
             })
+            if (!all) {
+              $('.search-results').append('<div class="show-more">Show More <i class="fa-solid fa-caret-down"></i></div>')
+              $('.show-more').on('click', function() {
+                console.log('show more clicked')
+                updateTable(show+20)
+              })
+            }
           });
+          
         }
 
         $('.search-button').on('click', function() {
