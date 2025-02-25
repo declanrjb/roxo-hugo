@@ -71,7 +71,11 @@
           $.get(request, function( data ) {
             $( ".search-results" ).html( data );
           });
-      }
+        }
+
+        $('.search-button').on('click', function() {
+          updateTable()
+        })
       })
     </script>
 
