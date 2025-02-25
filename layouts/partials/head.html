@@ -63,7 +63,15 @@
 
     <script>
       $(function() {
-        console.log('hello world')
+        function updateTable() {
+          var query = $('#file-search').val()
+
+          var request = "https://btb-api.onrender.com/search?q=" + query + "&format=html"
+
+          $.get(request, function( data ) {
+            $( ".search-results" ).html( data );
+          });
+      }
       })
     </script>
 
