@@ -85,11 +85,11 @@
 
           var query = $('#file-search').val()
 
-          var request = "https://btb-api.onrender.com/search?q=" + query + "&format=html"
+          var request = "https://btb-api.onrender.com/search?q=" + query + "&format=json"
           console.log('sending request: ' + request)
 
           $.get(request, function( data ) {
-            $( ".search-results" ).html( data );
+            // $( ".search-results" ).html( data );
 
             $.each(data, function(key, value) {
               console.log(value)
