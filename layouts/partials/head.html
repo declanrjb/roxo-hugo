@@ -70,14 +70,14 @@
 
         function updateTable() {
 
-          var docTemplate = "<a class='featured-document-wrapper' href='{{link}}' alt=''>\
+          var docTemplate = "<a class='featured-document-wrapper' href='LINK' alt=''>\
             <div class='featured-document'>\
               <column style='width: 30%;'>\
-                <img class='featured-document-thumbnail' src='{{thumbnail}}'>\
+                <img class='featured-document-thumbnail' src='THUMBNAIL'>\
               </column>\
               <column style='width: 70%; padding-left: 20px;' id='feature-doc-blurb-col'>\
-                <h4>{{title}}</h4>\
-                <p>{{blurb}}</p>\
+                <h4>TITLE</h4>\
+                <p>BLURB</p>\
               </column>\
             </div>\
           </a>"
@@ -91,9 +91,9 @@
           $.get(request, function( data ) {
             $( ".search-results" ).html( data );
 
-            // $.each(data, function(key, value) {
-            //   console.log(value)
-            // })
+            $.each(data, function(key, value) {
+              console.log(value)
+            })
           });
         }
 
