@@ -89,10 +89,17 @@
           console.log('sending request: ' + request)
 
           $.get(request, function( data ) {
-            // $( ".search-results" ).html( data );
+            $('.default-featured-documents').css('display', 'none')
 
             $.each(data, function(key, value) {
-              console.log(value)
+              var newDoc = docTemplate
+              var thumbnail = value.Thumbnail.replace('thumbnail', 'large')
+              newDoc = newDoc.replace('LINK', value.Link)
+              newDoc = newDoc.replace('THUMBNAIL', thumbnail)
+              newDoc = newDoc.replace('TITLE', value.Title)
+              newDoc = newDoc.replace('BLURB', value.Tags)
+
+              $( ".search-results" ).append( newDoc )              
             })
           });
         }
@@ -100,6 +107,16 @@
         $('.search-button').on('click', function() {
           updateTable()
         })
+
+        $('#file-search').bind('enterKey', function(e) {
+          updateTable()
+        })
+
+        $('#file-search').keyup(function(e){
+          if(e.keyCode == 13) {
+            $(this).trigger("enterKey");
+          }
+        });
       })
     </script>
 
