@@ -69,6 +69,20 @@
           });
 
         function updateTable() {
+
+          var docTemplate = "<a class='featured-document-wrapper' href='{{link}}' alt=''>\
+            <div class='featured-document'>\
+              <column style='width: 30%;'>\
+                <img class='featured-document-thumbnail' src='{{thumbnail}}'>\
+              </column>\
+              <column style='width: 70%; padding-left: 20px;' id='feature-doc-blurb-col'>\
+                <h4>{{title}}</h4>\
+                <p>{{blurb}}</p>\
+              </column>\
+            </div>\
+          </a>"
+
+
           var query = $('#file-search').val()
 
           var request = "https://btb-api.onrender.com/search?q=" + query + "&format=html"
