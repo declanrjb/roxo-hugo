@@ -63,11 +63,6 @@
 
     <script>
       $(function() {
-
-        $.get("https://btb-api.onrender.com/search", function( data ) {
-            console.log(data)
-          });
-
         function updateTable(show=8,all=false) {
 
           var docTemplate = "<a class='featured-document-wrapper' href='LINK' alt=''>\
@@ -90,13 +85,12 @@
           if (!all) {
             request += '&show=' + show
           }
-          console.log('sending request: ' + request)
 
           $.get(request, function( data ) {
             $('.default-featured-documents').css('display', 'none')
             $('.search-results').css('display', 'flex')
             $('.search-results').html('')
-            $.each(data, function(key, value) {
+            $.each(data.records, function(key, value) {
               var newDoc = docTemplate
               var thumbnail = value.Thumbnail.replace('thumbnail', 'large')
               newDoc = newDoc.replace('LINK', value.Link)
@@ -106,10 +100,10 @@
 
               $( ".search-results" ).append( newDoc )              
             })
-            if (!all) {
+
+            if (data.hasMore) {
               $('.search-results').append('<div class="show-more">Show More <i class="fa-solid fa-caret-down"></i></div>')
               $('.show-more').on('click', function() {
-                console.log('show more clicked')
                 updateTable(show+20)
               })
             }
