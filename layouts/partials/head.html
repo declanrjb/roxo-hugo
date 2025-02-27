@@ -111,8 +111,16 @@
           
         }
 
-        $('.search-button').on('click', function() {
-          updateTable()
+        var currentInput;
+        $('#file-search').on('input', function(e) {
+          currentInput = true;
+          setTimeout(function() 
+            {
+              if (currentInput) {
+                updateTable()
+              }
+              currentInput = false;
+            }, 1000);
         })
 
         $('#file-search').bind('enterKey', function(e) {
